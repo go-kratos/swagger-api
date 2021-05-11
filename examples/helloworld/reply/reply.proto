@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package reply;
+
+option go_package = "github.com/go-kratos/swagger-api/examples/helloworld/reply;reply";
+
+message Reply {
+    string value = 1;
+}

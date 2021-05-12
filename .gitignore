@@ -15,3 +15,5 @@
 # vendor/
 
 settings.json
+.DS_Store
+examples/helloworld/server/server

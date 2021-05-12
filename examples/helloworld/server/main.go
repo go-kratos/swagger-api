@@ -12,10 +12,9 @@ import (
 	"github.com/go-kratos/kratos/v2/middleware/logging"
 	"github.com/go-kratos/kratos/v2/middleware/recovery"
 	"github.com/go-kratos/kratos/v2/transport/http"
-	"github.com/go-kratos/kratos/v2/transport/http/health"
 	pb "github.com/go-kratos/swagger-api/examples/helloworld/helloworld"
 	reply "github.com/go-kratos/swagger-api/examples/helloworld/reply"
-	apiHandler "github.com/go-kratos/swagger-api/openapiv2/handler"
+	metaHandler "github.com/go-kratos/swagger-api/openapiv2/handler"
 )
 
 // go build -ldflags "-X main.Version=x.y.z"
@@ -58,11 +57,9 @@ func main() {
 			),
 		)),
 	)
-	handler := health.NewHandler()
-	httpSrv.HandlePrefix("/healthz", handler)
 
-	h := apiHandler.New()
-	httpSrv.HandlePrefix("/service", h)
+	h := metaHandler.New()
+	httpSrv.HandlePrefix("/q/", h)
 
 	app := kratos.New(
 		kratos.Name(Name),

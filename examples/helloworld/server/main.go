@@ -14,7 +14,7 @@ import (
 	"github.com/go-kratos/kratos/v2/transport/http"
 	pb "github.com/go-kratos/swagger-api/examples/helloworld/helloworld"
 	reply "github.com/go-kratos/swagger-api/examples/helloworld/reply"
-	metaHandler "github.com/go-kratos/swagger-api/openapiv2/handler"
+	"github.com/go-kratos/swagger-api/openapiv2"
 )
 
 // go build -ldflags "-X main.Version=x.y.z"
@@ -58,8 +58,11 @@ func main() {
 		)),
 	)
 
-	h := metaHandler.New()
+	h := openapiv2.NewHandler()
 	httpSrv.HandlePrefix("/q/", h)
+
+	/*	fs := httpx.FileServer(httpx.Dir("./dist"))
+		httpSrv.HandlePrefix("/swaggerui/", httpx.StripPrefix("/swaggerui/", fs))*/
 
 	app := kratos.New(
 		kratos.Name(Name),

@@ -17,3 +17,4 @@
 settings.json
 .DS_Store
 examples/helloworld/server/server
+examples/helloworld/server/dist

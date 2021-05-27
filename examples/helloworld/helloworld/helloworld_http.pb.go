@@ -4,10 +4,12 @@ package helloworld
 
 import (
 	context "context"
+	"fmt"
+	http "net/http"
+
 	http1 "github.com/go-kratos/kratos/v2/transport/http"
 	binding "github.com/go-kratos/kratos/v2/transport/http/binding"
 	mux "github.com/gorilla/mux"
-	http "net/http"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -31,6 +33,11 @@ func NewGreeterHandler(srv GreeterHandler, opts ...http1.HandleOption) http.Hand
 	r := mux.NewRouter()
 
 	r.HandleFunc("/helloworld/{name}", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Println(r.RequestURI)
+		fmt.Println(r.URL.Path)
+		fmt.Println(r.URL.RequestURI())
+		fmt.Println(r.URL.RawQuery)
+
 		var in HelloRequest
 		if err := h.Decode(r, &in); err != nil {
 			h.Error(w, r, err)

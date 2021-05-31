@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/go-kratos/kratos/v2/api/metadata"
-	"github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2/generator"
+	"github.com/longXboy/grpc-gateway/v2/protoc-gen-openapiv2/generator"
 	"google.golang.org/grpc"
 	"google.golang.org/protobuf/types/pluginpb"
 )

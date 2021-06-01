@@ -55,8 +55,8 @@ github.com/ghodss/yaml v1.0.0/go.mod h1:4dBDuWmgqj2HViK6kFavaiC9ZROes6MMH2rRYeME
 github.com/go-gl/glfw v0.0.0-20190409004039-e6da0acd62b1/go.mod h1:vR7hzQXu2zJy9AVAgeJqvqgH9Q5CA+iKCZ2gyEVpxRU=
 github.com/go-gl/glfw/v3.3/glfw v0.0.0-20191125211704-12ad95a8df72/go.mod h1:tQ2UAYgL5IevRw8kRxooKSPJfGvJ9fJQFa0TUsXzTg8=
 github.com/go-gl/glfw/v3.3/glfw v0.0.0-20200222043503-6f7a984d4dc4/go.mod h1:tQ2UAYgL5IevRw8kRxooKSPJfGvJ9fJQFa0TUsXzTg8=
-github.com/go-kratos/kratos/v2 v2.0.0-20210527131947-b32e7d6e701f h1:/GsRaJ0x7ciWG+5fZlZ6SVxGlnHJwrGnThDj0f5k19g=
-github.com/go-kratos/kratos/v2 v2.0.0-20210527131947-b32e7d6e701f/go.mod h1:puDEhRv+dqKa4ZdlInEAbO8ibGxqNhAXFjGleIRh9V4=
+github.com/go-kratos/kratos/v2 v2.0.0-20210531162156-ad8f12c9fda0 h1:5+H5C6Dky8FkvjLvUCmho9Dr3C3F9rE2ijkvCP+01nQ=
+github.com/go-kratos/kratos/v2 v2.0.0-20210531162156-ad8f12c9fda0/go.mod h1:puDEhRv+dqKa4ZdlInEAbO8ibGxqNhAXFjGleIRh9V4=
 github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b/go.mod h1:SBH7ygxi8pfUlaOkMMuAQtPIUF8ecWP5IEl/CR7VP2Q=
 github.com/golang/glog v0.0.0-20210429001901-424d2337a529 h1:2voWjNECnrZRbfwXxHB1/j8wa6xdKn85B5NzgVL/pTU=
 github.com/golang/glog v0.0.0-20210429001901-424d2337a529/go.mod h1:SBH7ygxi8pfUlaOkMMuAQtPIUF8ecWP5IEl/CR7VP2Q=

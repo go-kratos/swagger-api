@@ -8,9 +8,6 @@ import (
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/errors"
 	"github.com/go-kratos/kratos/v2/log"
-	"github.com/go-kratos/kratos/v2/middleware"
-	"github.com/go-kratos/kratos/v2/middleware/logging"
-	"github.com/go-kratos/kratos/v2/middleware/recovery"
 	"github.com/go-kratos/kratos/v2/transport/http"
 	pb "github.com/go-kratos/swagger-api/examples/helloworld/helloworld"
 	reply "github.com/go-kratos/swagger-api/examples/helloworld/reply"
@@ -49,14 +46,7 @@ func main() {
 	s := &server{}
 
 	httpSrv := http.NewServer(http.Address(":8000"))
-	httpSrv.HandlePrefix("/helloworld", pb.NewGreeterHandler(s,
-		http.Middleware(
-			middleware.Chain(
-				logging.Server(logger),
-				recovery.Recovery(),
-			),
-		)),
-	)
+	pb.RegisterGreeterHTTPServer(httpSrv, s)
 
 	h := openapiv2.NewHandler()
 	httpSrv.HandlePrefix("/q/", h)

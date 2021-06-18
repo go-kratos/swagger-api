@@ -5,7 +5,7 @@ go 1.15
 require (
 	github.com/go-kratos/kratos/v2 v2.0.0-rc5
 	github.com/gorilla/mux v1.8.0
-	github.com/longXboy/grpc-gateway/v2 v2.0.0-20210618091238-e85f737561e8
+	github.com/longXboy/grpc-gateway/v2 v2.0.0-20210618101231-f0855eb5395e
 	github.com/rakyll/statik v0.1.7
 	golang.org/x/net v0.0.0-20210614182718-04defd469f4e // indirect
 	golang.org/x/sys v0.0.0-20210616094352-59db8d763f22 // indirect

@@ -41,7 +41,7 @@ func NewHandler() http.Handler {
 			return
 		}
 
-		content, err := service.GetServiceOpenAPI(r.Context(), &in)
+		content, err := service.GetServiceOpenAPI(r.Context(), &in, false)
 		if err != nil {
 			w.WriteHeader(500)
 			w.Write([]byte(err.Error()))

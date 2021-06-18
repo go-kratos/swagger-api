@@ -28,7 +28,7 @@ func (s *Service) ListServices(ctx context.Context, in *metadata.ListServicesReq
 }
 
 // GetServiceOpenAPI get service open api
-func (s *Service) GetServiceOpenAPI(ctx context.Context, in *metadata.GetServiceDescRequest) (string, error) {
+func (s *Service) GetServiceOpenAPI(ctx context.Context, in *metadata.GetServiceDescRequest, onlyRPC bool) (string, error) {
 	protoSet, err := s.ser.GetServiceDesc(ctx, in)
 	if err != nil {
 		return "", err
@@ -50,7 +50,7 @@ func (s *Service) GetServiceOpenAPI(ctx context.Context, in *metadata.GetService
 	req.ProtoFile = files
 
 	var g generator.Generator
-	resp, err := g.Gen(req)
+	resp, err := g.Gen(req, onlyRPC)
 	if err != nil {
 		return "", err
 	}

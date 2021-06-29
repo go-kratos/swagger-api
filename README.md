@@ -10,13 +10,11 @@ h := openapiv2.NewHandler()
 //将/q/路由放在最前匹配
 httpSrv.HandlePrefix("/q/", h)
 ```
-启动应用后,在浏览器中输入 [http://\<ip>:\<port>/q/services](http://ip:port/q/services),找到需要渲染的\<package_name>.\<service_name>
-![Alt text](/img/services.png)
-在浏览器中输入[http://\<ip>:\<port>/q/swagger-ui/](http://\<ip>:\<port>/q/swagger-ui/) （注意结尾有斜杠/），同时在Swagger ui界面的Explore栏目中输入[http://\<ip>:\<port>/q/service/\<package_name>.\<service_name>](http://<ip>:<port>/q/service/\<package_name>.\<service_name>)并点击Explore
-![Alt text](/img/swagger.png)
+启动应用后,在浏览器中输入 [http://\<ip>:\<port>/q/services](http://ip:port/q/services)，在顶栏右侧选框选取希望查看的服务名，即可浏览接口文档。
+![select service](/img/swagger.png)
 
 ## FAQ
-如果访问/q/services出现报错`failed to decompress enc: bad gzipped descriptor: EOF`的报错说明部分依赖的proto文件生成的路径不对导致的，
+如果启动时顶栏选框未显示可选的服务名，或访问/q/services出现报错，`failed to decompress enc: bad gzipped descriptor: EOF`的报错说明部分依赖的proto文件生成的路径不对导致的，
 比如:
 - api/basedata/tag/v1/tag.proto
 - api/basedata/article/v1/article.proto

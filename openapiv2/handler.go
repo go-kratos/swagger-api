@@ -7,7 +7,7 @@ import (
 
 	"github.com/go-kratos/kratos/v2/api/metadata"
 	"github.com/go-kratos/kratos/v2/transport/http/binding"
-	_ "github.com/go-kratos/swagger-api/openapiv2/swagger_ui" // import statik static files
+	_ "github.com/go-kratos/swagger-api/openapiv2/swagger_ui/statik" // import statik static files
 	mux "github.com/gorilla/mux"
 	"github.com/rakyll/statik/fs"
 )

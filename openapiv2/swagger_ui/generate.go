@@ -1,3 +1,3 @@
-//go:generate statik -src=./dist
+//go:generate statik -m -src=./dist
 
 package swagger_ui

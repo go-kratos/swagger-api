@@ -14,7 +14,7 @@ httpSrv.HandlePrefix("/q/", h)
 ![select service](/img/swagger.png)
 
 ## FAQ
-如果启动时顶栏选框未显示可选的服务名，或访问/q/services出现报错，`failed to decompress enc: bad gzipped descriptor: EOF`的报错说明部分依赖的proto文件生成的路径不对导致的，
+1. 如果启动时顶栏选框未显示可选的服务名，或访问/q/services出现报错，`failed to decompress enc: bad gzipped descriptor: EOF`的报错说明部分依赖的proto文件生成的路径不对导致的，
 比如:
 - api/basedata/tag/v1/tag.proto
 - api/basedata/article/v1/article.proto
@@ -23,3 +23,4 @@ httpSrv.HandlePrefix("/q/", h)
 但是 tag.proto 生成的tag.pb.go文件中source是tag.proto（漏掉了api/basedata/tag/v1/）导致了依赖未找到
 
 此时需要生成tag.pb.go时kratos proto client api/basedata/tag/v1/tag.proto 补全proto的路径，这样生成的tag.pb.go文件中source就是正确的(api/basedata/tag/v1/tag.proto)
+2. 如果想给swagger api添加说明、examples请参考[a_bit_of_everything](https://github.com/longXboy/grpc-gateway/blob/master/examples/internal/proto/examplepb/a_bit_of_everything.proto)，同时注意需要将[annotations.proto](https://github.com/longXboy/grpc-gateway/blob/master/protoc-gen-openapiv2/options/annotations.proto)和[openapiv2.proto](https://github.com/longXboy/grpc-gateway/blob/master/protoc-gen-openapiv2/options/openapiv2.proto)这两个proto文件复制到third_party/protoc-gen-openapiv2/options目录下

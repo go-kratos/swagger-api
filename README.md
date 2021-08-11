@@ -13,7 +13,7 @@ httpSrv.HandlePrefix("/q/", h)
 
 支持generator进行自定义配置
 ```go
-h := openapiv2.NewHandler(generator.UseJSONNamesForFields(true), generator.EnumsAsInts(true))
+h := openapiv2.NewHandler(openapiv2.WithGeneratorOptions(generator.UseJSONNamesForFields(true), generator.EnumsAsInts(true)))
 ```
 更多配置参见 https://github.com/go-kratos/grpc-gateway/blob/master/protoc-gen-openapiv2/generator/option.go
 

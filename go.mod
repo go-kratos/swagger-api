@@ -3,7 +3,7 @@ module github.com/go-kratos/swagger-api
 go 1.15
 
 require (
-	github.com/go-kratos/grpc-gateway/v2 v2.0.0-20210804092615-bdc92eb5ce83
+	github.com/go-kratos/grpc-gateway/v2 v2.5.1-0.20210811062259-c92d36e434b1
 	github.com/go-kratos/kratos/v2 v2.0.3
 	github.com/gorilla/mux v1.8.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.5.0

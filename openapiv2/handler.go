@@ -5,15 +5,25 @@ import (
 	"net/http"
 	"net/url"
 
+	"github.com/go-kratos/grpc-gateway/v2/protoc-gen-openapiv2/generator"
 	"github.com/go-kratos/kratos/v2/api/metadata"
 	"github.com/go-kratos/kratos/v2/transport/http/binding"
 	_ "github.com/go-kratos/swagger-api/openapiv2/swagger_ui/statik" // import statik static files
-	mux "github.com/gorilla/mux"
+	"github.com/gorilla/mux"
 	"github.com/rakyll/statik/fs"
 )
 
-func NewHandler() http.Handler {
-	service := New(nil)
+func NewHandler(handlerOpts ...HandlerOption) http.Handler {
+	opts := &options{
+		// Compatible with default UseJSONNamesForFields is true
+		generatorOptions: []generator.Option{generator.UseJSONNamesForFields(true)},
+	}
+
+	for _, o := range handlerOpts {
+		o(opts)
+	}
+
+	service := New(nil, opts.generatorOptions...)
 	r := mux.NewRouter()
 
 	r.HandleFunc("/q/services", func(w http.ResponseWriter, r *http.Request) {

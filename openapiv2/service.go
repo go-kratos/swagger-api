@@ -12,13 +12,15 @@ import (
 
 // Service is service
 type Service struct {
-	ser *metadata.Server
+	ser  *metadata.Server
+	opts []generator.Option
 }
 
-// New new service
-func New(srv *grpc.Server) *Service {
+// New service
+func New(srv *grpc.Server, opts ...generator.Option) *Service {
 	return &Service{
-		ser: metadata.NewServer(srv),
+		ser:  metadata.NewServer(srv),
+		opts: opts,
 	}
 }
 
@@ -49,7 +51,7 @@ func (s *Service) GetServiceOpenAPI(ctx context.Context, in *metadata.GetService
 	req.Parameter = &para
 	req.ProtoFile = files
 
-	var g generator.Generator
+	g := generator.NewGenerator(s.opts...)
 	resp, err := g.Gen(req, onlyRPC)
 	if err != nil {
 		return "", err

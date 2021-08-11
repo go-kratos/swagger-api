@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"net/url"
 
+	"github.com/go-kratos/grpc-gateway/v2/protoc-gen-openapiv2/generator"
 	"github.com/go-kratos/kratos/v2/api/metadata"
 	"github.com/go-kratos/kratos/v2/transport/http/binding"
 	_ "github.com/go-kratos/swagger-api/openapiv2/swagger_ui/statik" // import statik static files
@@ -12,8 +13,13 @@ import (
 	"github.com/rakyll/statik/fs"
 )
 
-func NewHandler() http.Handler {
-	service := New(nil)
+func NewHandler(opts ...generator.Option) http.Handler {
+	if len(opts) == 0 {
+		// Compatible with default UseJSONNamesForFields is true
+		opts = append(opts, generator.UseJSONNamesForFields(true))
+	}
+
+	service := New(nil, opts...)
 	r := mux.NewRouter()
 
 	r.HandleFunc("/q/services", func(w http.ResponseWriter, r *http.Request) {

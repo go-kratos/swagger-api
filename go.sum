@@ -60,6 +60,8 @@ github.com/go-gl/glfw/v3.3/glfw v0.0.0-20191125211704-12ad95a8df72/go.mod h1:tQ2
 github.com/go-gl/glfw/v3.3/glfw v0.0.0-20200222043503-6f7a984d4dc4/go.mod h1:tQ2UAYgL5IevRw8kRxooKSPJfGvJ9fJQFa0TUsXzTg8=
 github.com/go-kratos/grpc-gateway/v2 v2.0.0-20210804092615-bdc92eb5ce83 h1:YN1KsqX3mB8hkSrOLZv3xZaZh+lZ/L7QC00RATFLJSg=
 github.com/go-kratos/grpc-gateway/v2 v2.0.0-20210804092615-bdc92eb5ce83/go.mod h1:qV5/s5A7wfY7GkNzptcUFRGAG4Y8H4mlXpSrOkDEIk0=
+github.com/go-kratos/grpc-gateway/v2 v2.5.1-0.20210811062259-c92d36e434b1 h1:jPqlxMJEoi8Yv4WIAhQNKczdKjADox8WKrTp3bJNjFM=
+github.com/go-kratos/grpc-gateway/v2 v2.5.1-0.20210811062259-c92d36e434b1/go.mod h1:qV5/s5A7wfY7GkNzptcUFRGAG4Y8H4mlXpSrOkDEIk0=
 github.com/go-kratos/kratos/v2 v2.0.3 h1:Q8kGPSMnxdMrZ1dBD6He+3Dr54qsN3MVYMPHdiy4+tM=
 github.com/go-kratos/kratos/v2 v2.0.3/go.mod h1:Hgl0YPry9YyLtwTTfwLfowPKg+YS0dgZ06O5NHqz5hE=
 github.com/go-playground/assert/v2 v2.0.1 h1:MsBgLAaY856+nPRTKrp3/OZK38U/wa0CcBYNjji3q3A=

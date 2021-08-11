@@ -10,6 +10,14 @@ h := openapiv2.NewHandler()
 //将/q/路由放在最前匹配
 httpSrv.HandlePrefix("/q/", h)
 ```
+
+支持generator进行自定义配置
+```go
+h := openapiv2.NewHandler(generator.UseJSONNamesForFields(true), generator.EnumsAsInts(true))
+```
+更多配置参见 https://github.com/go-kratos/grpc-gateway/blob/master/protoc-gen-openapiv2/generator/option.go
+
+
 启动应用后,在浏览器中输入 [http://\<ip>:\<port>/q/services](http://ip:port/q/services)，在顶栏右侧选框选取希望查看的服务名，即可浏览接口文档。
 ![select service](/img/swagger.png)
 

@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/go-kratos/grpc-gateway/v2/protoc-gen-openapiv2/generator"
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/errors"
 	"github.com/go-kratos/kratos/v2/log"
@@ -48,7 +49,11 @@ func main() {
 	httpSrv := http.NewServer(http.Address(":8000"))
 	pb.RegisterGreeterHTTPServer(httpSrv, s)
 
-	h := openapiv2.NewHandler()
+	h := openapiv2.NewHandler(openapiv2.WithGeneratorOptions(
+		// you can set UseJSONNamesForFields to false
+		// default is true
+		generator.UseJSONNamesForFields(true),
+	))
 	httpSrv.HandlePrefix("/q/", h)
 
 	/*	fs := httpx.FileServer(httpx.Dir("./dist"))

@@ -33,4 +33,4 @@ h := openapiv2.NewHandler(openapiv2.WithGeneratorOptions(generator.UseJSONNamesF
 此时需要生成tag.pb.go时kratos proto client api/basedata/tag/v1/tag.proto 补全proto的路径，这样生成的tag.pb.go文件中source就是正确的(api/basedata/tag/v1/tag.proto)
 
 #### 2. 给swagger api添加说明、examples
-请参考[a_bit_of_everything](https://github.com/longXboy/grpc-gateway/blob/master/examples/internal/proto/examplepb/a_bit_of_everything.proto)，同时注意需要将[annotations.proto](https://github.com/go-kratos/grpc-gateway/blob/master/protoc-gen-openapiv2/options/annotations.proto)和[openapiv2.proto](https://github.com/go-kratos/grpc-gateway/blob/master/protoc-gen-openapiv2/options/openapiv2.proto)这两个proto文件复制到third_party/protoc-gen-openapiv2/options目录下
+请参考[a_bit_of_everything](https://github.com/longXboy/grpc-gateway/blob/master/examples/internal/proto/examplepb/a_bit_of_everything.proto)，同时注意需要将[annotations.proto](https://github.com/go-kratos/kratos/blob/main/third_party/protoc-gen-openapiv2/options/annotations.proto)和[openapiv2.proto](https://github.com/go-kratos/kratos/blob/main/third_party/protoc-gen-openapiv2/options/openapiv2.proto)这两个proto文件复制到third_party/protoc-gen-openapiv2/options目录下
